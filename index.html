@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Travel news</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://kit.fontawesome.com/40bbd637e0.js" crossorigin="anonymous"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  </head>
+
+  <body>
+    <div class="mobileMenuContainer" id="mobileMenuContainer">
+      <div class="mobileMenuTopBar">
+        <img src="assets/Logo.svg" alt="logo" class="mobileMenuLogo" />
+        <i class="fa-solid fa-times mobileMenuClose" onclick="closeMobileMenu()"></i>
+      </div>
+      <div class="mobileMenu">
+        <nav>
+          <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Travel</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+          </ul>
+        </nav>
+        <div class="mobileLoginButtons">
+          <a href="#" class="loginMobile">Login</a>
+          <a href="#" class="signupMobile">Sign up</a>
+        </div>
+      </div>
+    </div>
+    <div class="cover">
+      <div class="header">
+        <img src="assets/Logo.svg" alt="logo" class="mainLogo" />
+        <nav class="mainMenu">
+          <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Travel</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+          </ul>
+        </nav>
+        <div class="loginButtons">
+          <a href="#" class="login">Login</a>
+          <a href="#" class="signup">Sign up</a>
+        </div>
+        <i class="fa-solid fa-bars mobileMenuOpen" onclick="openMobileMenu()"></i>
+      </div>
+      <div class="mainTitle">
+        <h1>
+          Start your unforgettable<br />
+          journey with us.
+        </h1>
+        <p>The best travel for your jouney begins now</p>
+      </div>
+
+      <div class="form">
+        <span class="leftBackground"></span>
+        <div class="formBlock">
+          <div class="formContent">
+            <div>
+              <label class="formContentLabel">Destination</label>
+              <input class="formContentInput" placeholder="Dubai" />
+            </div>
+            <div>
+              <label class="formContentLabel">Person</label>
+              <select class="formContentSelect">
+                <option value="select2">1</option>
+                <option value="select2">2</option>
+                <option value="select2">3</option>
+                <option value="select2">4</option>
+                <option value="select2">5+</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="formContentLabel">Check in</label>
+              <input class="formContentInput" type="date" id="checkin" name="checkin" />
+            </div>
+            <div>
+              <label class="formContentLabel">Check Out</label>
+              <input class="formContentInput" type="date" id="checkout" name="checkout" />
+            </div>
+          </div>
+          <a href="#" class="bookNow">
+            <div class="bookNowButton">
+              <span>Book<br />Now</span>
+              <i class="fa-solid fa-arrow-right-long"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="greetings">
+      <h2 class="greetingsTitle" id="greetingsTitle" data-inviewport="typed">Hi there traveler!</h2>
+    </div>
+
+    <div class="SliderBlock popular">
+      <div class="titleContainer">
+        <div class="title">
+          <h2>Popular Destinations</h2>
+          <p>Most popular destinations around the world, from historical places to natural wonders.</p>
+        </div>
+        <div class="arrows">
+          <i class="fa-solid fa-angle-left prev sliderArrow inactive" id="arrowLeftPd" onclick="slideRight()"></i>
+          <i class="fa-solid fa-angle-right next sliderArrow" id="arrowRightPd" onclick="slideLeft()"></i>
+        </div>
+      </div>
+      <div class="sliderContainer" id="sliderContainer">
+        <div class="slider" id="slider"></div>
+        <div class="arrows-mobile">
+          <i class="fa-solid fa-angle-left prev sliderArrow inactive" id="arrowLeftPd" onclick="slideRight()"></i>
+          <i class="fa-solid fa-angle-right next sliderArrow" id="arrowRightPd" onclick="slideLeft()"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="titleContainer titleRigthAlign">
+      <div class="arrows">
+        <i class="fa-solid fa-angle-left prev sliderArrow inactive" id="arrowSoLeft" onclick="slideRightSo()"></i>
+        <i class="fa-solid fa-angle-right next sliderArrow" id="arrowSoRight" onclick="slideLeftSo()"></i>
+      </div>
+      <div class="title">
+        <h2>Special Offer</h2>
+        <p>Check out our special offer and discounts</p>
+      </div>
+    </div>
+    <div class="specialOfferSlContainer" id="specialOfferSlContainer">
+      <div class="articlesOffers" id="specialOffersSlider">
+        <div class="background sliderItemSo">
+          <img src="assets/lisbon.svg" />
+          <h5>Lisbon, Portugal</h5>
+          <div class="stars">
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+          </div>
+          <div class="destinationInfo">
+            <p>
+              5 nights and 4 days in 5 star hotel, breakfast and lunch included. Very popular during the renaissance.
+              Passage and going through the cites of the world in classical literature.
+            </p>
+            <div class="pricing">
+              <div class="priceInfo">
+                <label>From</label>
+                <span class="price">€500</span>
+              </div>
+              <button>DETAILS</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="background sliderItemSo">
+          <img src="assets/athens.svg" />
+          <h5>Athens, Greece</h5>
+          <div class="stars">
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+          </div>
+          <div class="destinationInfo">
+            <p>
+              5 nights and 4 days in 5 star hotel, breakfast and lunch included. Very popular during the renaissance.
+              Passage and going through the cites of the world in classical literature.
+            </p>
+            <div class="pricing">
+              <div class="priceInfo">
+                <label>From</label>
+                <span class="price">€500</span>
+              </div>
+              <button>DETAILS</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="background sliderItemSo">
+          <img src="assets/rome.svg" />
+          <h5>Rome, Italy</h5>
+          <div class="stars">
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+          </div>
+          <div>
+            <p>
+              5 nights and 4 days in 5 star hotel, breakfast and lunch included. Very popular during the renaissance.
+              Passage and going through the cites of the world in classical literature.
+            </p>
+            <div class="pricing">
+              <div class="priceInfo">
+                <label>From</label>
+                <span class="price">€500</span>
+              </div>
+              <button>DETAILS</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="background sliderItemSo">
+          <img src="assets/lisbon.svg" />
+          <h5>Lisbon, Portugal</h5>
+          <div class="stars">
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+          </div>
+          <div class="destinationInfo">
+            <p>
+              5 nights and 4 days in 5 star hotel, breakfast and lunch included. Very popular during the renaissance.
+              Passage and going through the cites of the world in classical literature.
+            </p>
+            <div class="pricing">
+              <div class="priceInfo">
+                <label>From</label>
+                <span class="price">€500</span>
+              </div>
+              <button>DETAILS</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="background sliderItemSo">
+          <img src="assets/athens.svg" />
+          <h5>Athens, Greece</h5>
+          <div class="stars">
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+          </div>
+          <div class="destinationInfo">
+            <p>
+              5 nights and 4 days in 5 star hotel, breakfast and lunch included. Very popular during the renaissance.
+              Passage and going through the cites of the world in classical literature.
+            </p>
+            <div class="pricing">
+              <div class="priceInfo">
+                <label>From</label>
+                <span class="price">€500</span>
+              </div>
+              <button>DETAILS</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="background sliderItemSo">
+          <img src="assets/rome.svg" />
+          <h5>Rome, Italy</h5>
+          <div class="stars">
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+          </div>
+          <div class="destinationInfo">
+            <p>
+              5 nights and 4 days in 5 star hotel, breakfast and lunch included. Very popular during the renaissance.
+              Passage and going through the cites of the world in classical literature.
+            </p>
+            <div class="pricing">
+              <div class="priceInfo">
+                <label>From</label>
+                <span class="price">€500</span>
+              </div>
+              <button>DETAILS</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="arrows-mobile">
+        <i class="fa-solid fa-angle-left prev sliderArrow inactive" id="arrowSoLeft" onclick="slideRightSo()"></i>
+        <i class="fa-solid fa-angle-right next sliderArrow" id="arrowSoRight" onclick="slideLeftSo()"></i>
+      </div>
+    </div>
+    <div class="titleContainer">
+      <div class="title">
+        <h2>Our Blog</h2>
+        <p>An insight the incredible experience in the world</p>
+      </div>
+    </div>
+    <div class="blog">
+      <img src="assets/Image Container_3.svg" alt="pictureItaly" />
+      <div class="textcontainer">
+        <h4>
+          Beautiful Italy<br />
+          Let’s travel
+        </h4>
+        <p>
+          But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I
+          will give you a complete account of the system and expound the actual teachings of the great explorer of the
+          truth, the master- builder of human happiness. No one rejects, dislike, or avoids plasure itself, because it
+          is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that
+          are extremly painful. Nor again is there anyone who loves or pursues.
+        </p>
+        <a href="#" class="readMore">Read More <i class="fa-solid fa-arrow-right-long"></i></a>
+      </div>
+    </div>
+    <div class="planners">
+      <div>
+        <div class="titleContainer">
+          <div class="title">
+            <h2>Trip Planners</h2>
+            <p>
+              20 years from now you will be more disappointed by the things that you didn’t do. Stop regretting and
+              start travelling, start throwing off the bowlines.
+            </p>
+          </div>
+        </div>
+        <div class="allTopics">
+          <span></span>
+          <a href="#">View all trip plans</a>
+          <span></span>
+        </div>
+      </div>
+      <div class="plannerItem">
+        <img style="height: 100%" src="assets/rome2.svg" />
+      </div>
+      <div class="plannerItem">
+        <img style="height: 100%" src="assets/eifelTower.svg" />
+      </div>
+      <div class="plannerItem">
+        <img style="height: 100%" src="assets/barcelona.svg" />
+      </div>
+      <div class="plannerItem">
+        <img style="height: 100%" src="assets/budapest.png" />
+      </div>
+    </div>
+    <div class="SliderBlock gallery">
+      <div class="titleContainer">
+        <div class="title">
+          <h2>Destination Gallery</h2>
+          <p>Our photo gallery on trip</p>
+        </div>
+        <div class="arrows">
+          <i class="fa-solid fa-angle-left prev sliderArrow inactive" id="arrowLeftDg" onclick="slideRightDg()"></i>
+          <i class="fa-solid fa-angle-right sliderArrow next" id="arrowRightDg" onclick="slideLeftDg()"></i>
+        </div>
+      </div>
+      <div class="sliderContainer" id="sliderContainerDg">
+        <div class="slider" id="sliderDg">
+          <div class="sliderItemDg">
+            <img src="assets/des1.svg" />
+          </div>
+          <div class="sliderItemDg">
+            <img src="assets/des2.svg" />
+          </div>
+          <div class="sliderItemDg">
+            <img src="assets/des3.svg" />
+          </div>
+          <div class="sliderItemDg">
+            <img src="assets/des4.svg" />
+          </div>
+          <div class="sliderItemDg">
+            <img src="assets/des1.svg" />
+          </div>
+          <div class="sliderItemDg">
+            <img src="assets/des2.svg" />
+          </div>
+          <div class="sliderItemDg">
+            <img src="assets/des3.svg" />
+          </div>
+          <div class="sliderItemDg">
+            <img src="assets/des4.svg" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="titleContainer">
+      <div class="title">
+        <h2>Traveler’s Experiences</h2>
+        <p>Here some awesome feedback from our travelers</p>
+      </div>
+    </div>
+    <div class="travelersContainer" id="travelersContainer">
+      <div class="travelers slider" id="travelersSlider">
+        <div class="travelersSlide">
+          <img class="people" src="assets/Avatar_1.svg" />
+          <p>
+            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I
+            will give you a complete account of the system and expound the actual teachings of the great explorer of the
+            truth, the master- builder of human happiness.
+          </p>
+          <div class="stars">
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+          </div>
+          <h5>John Doe</h5>
+          <p>Accountant</p>
+        </div>
+
+        <div class="travelersSlide">
+          <img class="people" src="assets/Avatar_2.svg" />
+          <p>
+            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I
+            will give you a complete account of the system and expound the actual teachings of the great explorer of the
+            truth, the master- builder of human happiness.
+          </p>
+          <div class="stars">
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+          </div>
+          <h5>John Smith</h5>
+          <p>Journalist, HWO News</p>
+        </div>
+
+        <div class="travelersSlide">
+          <img class="people" src="assets/Avatar.svg" />
+          <p>
+            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I
+            will give you a complete account of the system and expound the actual teachings of the great explorer of the
+            truth, the master- builder of human happiness.
+          </p>
+          <div class="stars">
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+          </div>
+          <h5>Tamara Bellis</h5>
+          <p>Managing Director, JTH</p>
+        </div>
+
+        <div class="travelersSlide">
+          <img class="people" src="assets/Avatar_1.svg" />
+          <p>
+            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I
+            will give you a complete account of the system and expound the actual teachings of the great explorer of the
+            truth, the master- builder of human happiness.
+          </p>
+          <div class="stars">
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+            <img src="assets/star.svg" />
+          </div>
+          <h5>John Doe</h5>
+          <p>Accountant</p>
+        </div>
+      </div>
+    </div>
+    <div class="travelersArrows">
+      <i class="fa-solid fa-angle-left prev sliderArrow inactive" id="arrowTeLeft" onclick="slideRightTe()"></i>
+      <i class="fa-solid fa-angle-right next sliderArrow" id="arrowTeRight" onclick="slideLeftTe()"></i>
+    </div>
+
+    <div class="newsletter">
+      <h4>Our Newsletter</h4>
+      <div class="subscribe">
+        <div>
+          <label>Email</label>
+          <input placeholder="Enter your email" />
+        </div>
+        <button>Subscribe</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footerContent">
+        <div class="logoinfo">
+          <a href="#"><img src="assets/Logo.svg" alt="logo" /></a>
+          <p>Copyright © Travellian 2020 All rights reserved</p>
+        </div>
+        <div>
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Travel</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Information</h4>
+          <ul>
+            <li><a href="#">Destination</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">T&A</a></li>
+            <li><a href="#">Privacy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact Info</h4>
+          <ul>
+            <li><a href="tel:+123456789">+123 456 789</a></li>
+            <li><a href="mailto:info@travellian.com">info@travellian.com</a></li>
+            <li>
+              <a
+                href="https://www.google.com/maps/search/1245,+New+York,+USA/@40.7668509,-73.9877601,14z/data=!3m1!4b1?entry=ttu"
+                >1245, New Yourk, USA</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow Us</h4>
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-pinterest"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-twitter"></i>
+        </div>
+      </div>
+    </div>
+    <button onclick="scrollToTop()" id="btn-go-top" class="btn-go-top" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+    <div class="cookie-container" id="cookie-container">
+      <div>
+        We use cookies in this website to give you the best experience on our site and show you relevant ads. To find out
+        more, read our
+        <a href="#">privacy policy</a> and
+        <a href="#">cookie policy</a>.
+      </div>
+      <button class="cookie-btn" onclick="hideCookieNotification()">
+        Okay
+      </button>
+  </body>
+  <script src="main.js"></script>
+  <script src="pdslider.js"></script>
+  <script src="soslider.js"></script>
+  <script src="dgslider.js"></script>
+  <script src="teslider.js"></script>
+</html>

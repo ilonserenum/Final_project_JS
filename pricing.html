@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Travel news - Pricing</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://kit.fontawesome.com/40bbd637e0.js" crossorigin="anonymous"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  </head>
+
+  <body>
+    <div class="mobileMenuContainer" id="mobileMenuContainer">
+      <div class="mobileMenuTopBar">
+        <img src="assets/Logo.svg" alt="logo" class="mobileMenuLogo" />
+        <i class="fa-solid fa-times mobileMenuClose" onclick="closeMobileMenu()"></i>
+      </div>
+      <div class="mobileMenu">
+        <nav>
+          <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Travel</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Pricing</a></li>
+          </ul>
+        </nav>
+        <div class="mobileLoginButtons">
+          <a href="#" class="loginMobile">Login</a>
+          <a href="#" class="signupMobile">Sign up</a>
+        </div>
+      </div>
+    </div>
+    <div class="cover">
+      <div class="header">
+        <img src="assets/Logo.svg" alt="logo" class="mainLogo" />
+        <nav class="mainMenu">
+          <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Travel</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Pricing</a></li>
+          </ul>
+        </nav>
+        <div class="loginButtons">
+          <a href="#" class="login">Login</a>
+          <a href="#" class="signup">Sign up</a>
+        </div>
+        <i class="fa-solid fa-bars mobileMenuOpen" onclick="openMobileMenu()"></i>
+      </div>
+      <div class="mainTitle">
+        <h1>
+          Start your unforgettable<br />
+          journey with us.
+        </h1>
+        <p>The best travel for your jouney begins now</p>
+      </div>
+
+      <div class="form">
+        <span class="leftBackground"></span>
+        <div class="formBlock">
+          <div class="formContent">
+            <div>
+              <label class="formContentLabel">Destination</label>
+              <input class="formContentInput" placeholder="Dubai" />
+            </div>
+            <div>
+              <label class="formContentLabel">Person</label>
+              <select class="formContentSelect">
+                <option value="select2">1</option>
+                <option value="select2">2</option>
+                <option value="select2">3</option>
+                <option value="select2">4</option>
+                <option value="select2">5+</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="formContentLabel">Check in</label>
+              <input class="formContentInput" type="date" id="checkin" name="checkin" />
+            </div>
+            <div>
+              <label class="formContentLabel">Check Out</label>
+              <input class="formContentInput" type="date" id="checkout" name="checkout" />
+            </div>
+          </div>
+          <a href="#" class="bookNow">
+            <div class="bookNowButton">
+              <span>Book<br />Now</span>
+              <i class="fa-solid fa-arrow-right-long"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <section id="s-destinations" class="hidden">
+      <div class="destination-filter">
+        <div class="filter-by-price">
+          <label for="price" class="filter-price">Filter by max price</label>
+          <input type="range" id="destination-price-slider" name="price" min="0" max="6000" value="6000" oninput="updateSliderValue()" onchange="fillDestinations()" />
+          <span id="price-value"></span>
+      </div>
+      </div>
+      <div class="accordion" id="accordion-destinations"></div>
+    </section>
+    <section id="s-testimonials" class="hidden">
+      <div class="testimonials-wrapper">
+        <div class="testimonial-container" id="testimonial-container"></div>
+        <div class="testimonial-buttons">
+          <button id="prev">&lt;</button>
+          <button id="next">&gt;</button>
+        </div>
+      </div>
+    </section>
+    <section id="s-testimonials-form" class="hidden">
+      <div class="form-wrapper-add-testimonial">
+        <div class="form-add-testimonial">
+          <div class="form-add-testimonial-header">
+            <h2>Add a testimonial</h2>
+          </div>
+          <div class="form-add-testimonial-body">
+            <div class="form-add-testimonial-body-left">
+              <div class="form-add-testimonial-body-left-input">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" />
+              </div>
+              <div id="form-error-name">
+                <span id="form-error-name-text"></span>
+              </div>
+              <div class="form-add-testimonial-body-left-input">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" />
+              </div>
+              <div id="form-error-company">
+                <span id="form-error-company-text"></span>
+              </div>
+              <div class="form-add-testimonial-body-left-input">
+                <label for="position">Position</label>
+                <input type="text" id="position" name="position" />
+              </div>
+              <div id="form-error-position">
+                <span id="form-error-position-text"></span>
+              </div>
+              <div class="form-add-testimonial-body-left-input">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" />
+              </div>
+              <div id="form-error-email">
+                <span id="form-error-email-text"></span>
+              </div>
+              <div class="form-add-testimonial-body-left-input">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" />
+              </div>
+              <div id="form-error-password">
+                <span id="form-error-password-text"></span>
+              </div>
+              <div class="form-add-testimonial-body-left-input">
+                <label for="password">Repeat Password</label>
+                <input type="password" id="passwordRpt" name="password" />
+              </div>
+              <div id="form-error-passwordRpt">
+                <span id="form-error-passwordRpt-text"></span>
+              </div>
+            </div>
+            <div class="form-add-testimonial-body-right">
+              <div class="form-add-testimonial-body-right-input">
+                <label for="message">Message</label>
+                <textarea id="message" name="message"></textarea>
+              </div>
+            </div>
+            <div id="form-error-message">
+              <span id="form-error-message-text"></span>
+            </div>
+          </div>
+          <div class="form-add-testimonial-footer">
+            <button class="btn-add-testimonial" onclick="addTestimonial()">Add testimonial</button>
+            <button class="btn-remove-testimonial" onclick="removeTestimonial()">Remove testimonial</button>
+          </div>
+          </div>
+      </div>
+    </section>
+  </div>
+
+    <div class="footer">
+      <div class="footerContent">
+        <div class="logoinfo">
+          <a href="#"><img src="assets/Logo.svg" alt="logo" /></a>
+          <p>Copyright © Travellian 2020 All rights reserved</p>
+        </div>
+        <div>
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Explore</a></li>
+            <li><a href="#">Travel</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Information</h4>
+          <ul>
+            <li><a href="#">Destination</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">T&A</a></li>
+            <li><a href="#">Privacy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact Info</h4>
+          <ul>
+            <li><a href="tel:+123456789">+123 456 789</a></li>
+            <li><a href="mailto:info@travellian.com">info@travellian.com</a></li>
+            <li>
+              <a
+                href="https://www.google.com/maps/search/1245,+New+York,+USA/@40.7668509,-73.9877601,14z/data=!3m1!4b1?entry=ttu"
+                >1245, New Yourk, USA</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow Us</h4>
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-pinterest"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-twitter"></i>
+        </div>
+      </div>
+    </div>
+    <button onclick="scrollToTop()" id="btn-go-top" class="btn-go-top" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+    <div class="cookie-container" id="cookie-container">
+      <div>
+        We use cookies in this website to give you the best experience on our site and show you relevant ads. To find out
+        more, read our
+        <a href="#">privacy policy</a> and
+        <a href="#">cookie policy</a>.
+      </div>
+      <button class="cookie-btn" onclick="hideCookieNotification()">
+        Okay
+      </button>
+  </body>
+  <script src="pricing.js"></script>
+</html>
